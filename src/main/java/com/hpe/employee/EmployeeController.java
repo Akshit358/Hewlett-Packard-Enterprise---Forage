@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
     
-    private final Employees employees;
+    private final EmployeeManager employeeManager;
 
     public EmployeeController() {
-        this.employees = new Employees();
+        this.employeeManager = new EmployeeManager();
     }
 
     @GetMapping("/employees")
     public Employees getAllEmployees() {
-        return employees;
+        return employeeManager.getEmployees();
     }
 }

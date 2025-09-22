@@ -9,7 +9,7 @@ This service provides a REST API endpoint to retrieve employee information in JS
 ## Features
 
 - **GET /employees** - Retrieve all employees
-- Hardcoded employee data (5 sample employees)
+- Hardcoded employee data (4 sample employees)
 - JSON response format as specified in requirements
 - Spring Boot embedded Tomcat server on port 8080
 
@@ -19,8 +19,9 @@ This service provides a REST API endpoint to retrieve employee information in JS
 src/main/java/com/hpe/employee/
 ├── Employee.java              # Employee entity with private fields and getters
 ├── Employees.java             # Manager class for employee list
+├── EmployeeManager.java       # Initializes and manages employee data
 ├── EmployeeController.java    # REST controller with /employees endpoint
-└── EmployeeServiceApplication.java  # Main Spring Boot application class
+└── RestServiceApplication.java  # Main Spring Boot application class
 
 src/main/resources/
 └── application.properties     # Application configuration
@@ -56,8 +57,21 @@ GET http://localhost:8080/employees
             "last_name": "Smith",
             "email": "jane.smith@hpe.com",
             "title": "Product Manager"
+        },
+        {
+            "employee_id": "EMP003",
+            "first_name": "Mike",
+            "last_name": "Johnson",
+            "email": "mike.johnson@hpe.com",
+            "title": "Data Scientist"
+        },
+        {
+            "employee_id": "EMP004",
+            "first_name": "Sarah",
+            "last_name": "Williams",
+            "email": "sarah.williams@hpe.com",
+            "title": "UX Designer"
         }
-        // ... more employees
     ]
 }
 ```
@@ -73,7 +87,7 @@ GET http://localhost:8080/employees
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Akshit358/Hewlett-Packard-Enterprise---Forage.git
 cd Hewlett-Packard-Enterprise---Forage
 ```
 
@@ -111,8 +125,9 @@ Or using any HTTP client like Postman, Insomnia, etc.
 
 ✅ Employee class with private variables and getter functions  
 ✅ Employees class that manages the full list of employees  
+✅ EmployeeManager class responsible for initializing employee data  
 ✅ Controller class with GET /employees endpoint  
-✅ Hardcoded employee data  
+✅ Hardcoded employee data (4 employees as specified)  
 ✅ JSON response format matching specifications  
 ✅ Spring Boot RESTful web service architecture  
 
@@ -123,6 +138,16 @@ This project fulfills all requirements for Task 2 of the HPE Forage program:
 - Created a Spring Boot RESTful web service
 - Implemented GET /employees endpoint
 - Returns JSON representation of employee data
-- Includes all required components (Employee, Employees, Controller classes)
-- Hardcoded employee data as specified
+- Includes all required components (Employee, Employees, EmployeeManager, EmployeeController, RestServiceApplication classes)
+- Hardcoded employee data as specified (4 employees)
 - Service runs on localhost:8080 as required
+
+## Core Application Files
+
+The following files contain the core application logic as specified in the task requirements:
+
+- `Employee.java` - Employee resource class with private variables and getters
+- `Employees.java` - Resource class that maintains employee list
+- `EmployeeManager.java` - Class responsible for initializing employee data
+- `EmployeeController.java` - Resource controller for HTTP GET requests
+- `RestServiceApplication.java` - Main Spring Boot application class
